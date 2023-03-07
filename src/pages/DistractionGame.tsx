@@ -13,7 +13,7 @@ export const DistractionGame = (props:DistractionGameProps) => {
 
     return (
         <>
-            <MemoryGame gridNumber={4} gameFinished={redirect}/>
+            <MemoryGame gridNumber={4}  gameFinished={redirect}/>
         </>
     )
 }
