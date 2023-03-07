@@ -17,7 +17,7 @@ export const StandardPasswordEntry = () => {
             </div>
 
             <Affix position={{ bottom: rem(20), right: rem(20)}}>
-                <a href="/emoji/distraction"><Button color="green" leftIcon={<VscSave/>}>Save Password</Button></a>
+                <a href="/standard/distraction"><Button color="green" leftIcon={<VscSave/>}>Save Password</Button></a>
             </Affix>   
             
         </>
