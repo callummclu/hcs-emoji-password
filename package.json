@@ -13,6 +13,7 @@
     "@types/react-dom": "^18.0.11",
     "emoji-picker-react": "^4.4.7",
     "react": "^18.2.0",
+    "react-card-memory-game": "^1.1.5",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.8.2",
