@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Input, UnstyledButton } from '@mantine/core';
+import {AiOutlineSmile} from 'react-icons/ai'
+import React, { useState } from 'react';
+import EmojiPicker from 'emoji-picker-react';
 
 function App() {
+
+  const [showEmojiPicker, setShowEmojiPicker] = useState(false);
+
+  const [passwordInput, setPasswordInput] = useState('');
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div style={{display:"flex", width:"100%",alignItems:"center",justifyContent:"center"}}>
+
+        <div style={{display:"flex"}}>
+        <Input value={passwordInput} pr="xs"/>
+        <div>
+        <UnstyledButton pt={7} onClick={()=>setShowEmojiPicker(!showEmojiPicker)}><AiOutlineSmile size={20} color="gray"/></UnstyledButton>
+        <div style={{position:"absolute", top:50, left:"50%",transform:"translateX(-50%)"}}>
+        {showEmojiPicker && <EmojiPicker onEmojiClick={(emoji) => setPasswordInput(passwordInput+emoji.emoji)}/>}
+        </div>
+        </div>
+        </div>
+        
+
+      </div>
     </div>
   );
 }
