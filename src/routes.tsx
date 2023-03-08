@@ -1,5 +1,6 @@
 import React from "react";
 import { CompletePage } from "./pages/Complete";
+import { Display } from "./pages/data";
 import { DistractionGame } from "./pages/DistractionGame";
 import { EmojiPasswordEntry } from "./pages/Emoji/EmojiPasswordEntry";
 import { EmojiRepeatPassword } from "./pages/Emoji/EmojiRepeatPassword";
@@ -8,13 +9,14 @@ import { Introduction } from "./pages/Introduction";
 import { StandardPasswordEntry } from "./pages/Standard/StandardPasswordEntry";
 import { StandardRepeatPassword } from "./pages/Standard/StandardRepeatPassword";
 import { StandardSplashPage } from "./pages/Standard/StandardSplashpage";
-
+import { Error } from './pages/error'
 interface Route{
     path:string;
     element:React.ReactElement;
 }
 
 export const routes:Route[] = [
+    {path: "*", element: <Error/>},
     {path:"/",element:<Introduction/>},
 
     // emoji entry
@@ -29,5 +31,6 @@ export const routes:Route[] = [
     {path:"standard/repeat", element:<StandardRepeatPassword/>},
     {path:"standard/distraction", element: <DistractionGame type="standard"/>},
 
-    {path:"complete", element:<CompletePage/>}
+    {path:"complete", element:<CompletePage/>},
+    {path:"results", element:<Display/>},
 ]
