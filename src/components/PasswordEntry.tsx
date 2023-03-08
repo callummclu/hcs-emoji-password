@@ -18,7 +18,7 @@ export const PasswordEntry = (props:PasswordProps) => {
     const [emojiHover, setEmojiHover] = useState(false);
 
     const inputValidation = () => {
-        if((/\p{Extended_Pictographic}/u.test(passwordInput))){
+        if((/\p{Extended_Pictographic}/u.test(passwordInput)) || !props.isEmoji){
             if(Array.from(passwordInput).length < 8){
                 setInputErrorText("Password must be at least 8 characters");
                 return
@@ -63,7 +63,7 @@ export const PasswordEntry = (props:PasswordProps) => {
         <UnstyledButton onMouseOver={()=>setEmojiHover(true)} onMouseOut={() => setEmojiHover(false)} pt={7} onClick={()=>setShowEmojiPicker(!showEmojiPicker)}><AiOutlineSmile size={20} color={emojiHover ? "orange":"gray"}/></UnstyledButton>
         {showEmojiPicker &&
         <div style={{position:"absolute", top:70, left:"50%",transform:"translateX(-50%)"}}>
-         <EmojiPicker onEmojiClick={(emoji) => setPasswordInput(passwordInput+emoji.emoji)}/>
+         <EmojiPicker autoFocusSearch={false} searchDisabled={true} onEmojiClick={(emoji) => setPasswordInput(passwordInput+emoji.emoji)}/>
         </div>}
         </div>}
         </div>
