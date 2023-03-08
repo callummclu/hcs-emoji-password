@@ -6,6 +6,11 @@ import { PasswordEntry } from "../../components/PasswordEntry"
 export const StandardPasswordEntry = () => {
     const [password, setPassword] = useState("")
 
+    const SaveToLocalStorage = () => {
+        localStorage.setItem("standard_password", password);
+        window.location.replace("/standard/distraction")
+    }
+
 
     return (
 
@@ -17,7 +22,7 @@ export const StandardPasswordEntry = () => {
             </div>
 
             <Affix position={{ bottom: rem(20), right: rem(20)}}>
-                <a href="/standard/distraction"><Button color="green" leftIcon={<VscSave/>}>Save Password</Button></a>
+                <Button onClick={SaveToLocalStorage} color="green" leftIcon={<VscSave/>}>Save Password</Button>
             </Affix>   
             
         </>

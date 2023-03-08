@@ -6,6 +6,10 @@ import { PasswordEntry } from "../../components/PasswordEntry"
 export const EmojiRepeatPassword = () => {
     const [password, setPassword] = useState("")
 
+    const SaveToLocalStorage = () => {
+        localStorage.setItem("emoji_reentry", password);
+        window.location.replace("/standard")
+    }
 
     return (
 
@@ -17,7 +21,7 @@ export const EmojiRepeatPassword = () => {
             </div>
 
             <Affix position={{ bottom: rem(20), right: rem(20)}}>
-                <a href="/standard"><Button color="green">Complete task</Button></a>
+                <Button onClick={SaveToLocalStorage} color="green">Complete task</Button>
             </Affix>   
             
         </>

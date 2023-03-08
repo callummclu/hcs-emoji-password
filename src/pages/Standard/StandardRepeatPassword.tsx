@@ -5,6 +5,10 @@ import { PasswordEntry } from "../../components/PasswordEntry"
 export const StandardRepeatPassword = () => {
     const [password, setPassword] = useState("")
 
+    const SaveToLocalStorage = () => {
+        localStorage.setItem("standard_reentry", password);
+        window.location.replace("/complete")
+    }
 
     return (
 
@@ -17,7 +21,7 @@ export const StandardRepeatPassword = () => {
             </div>
 
             <Affix position={{ bottom: rem(20), right: rem(20)}}>
-                <a href="/complete"><Button color="green">Complete task</Button></a>
+                <Button onClick={SaveToLocalStorage} color="green">Complete task</Button>
             </Affix>   
             
         </>
