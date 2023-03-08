@@ -6,7 +6,7 @@ export const Display = () => {
     const [success, setSuccess] = useState(true)
 
     useEffect(()=>{
-        fetch("https://hcs-emoji-password.onrender.com/")
+        fetch("https://hcs-emoji-password.onrender.com/api")
             .then(async data => {
                 let data_json = await data.json()
                 setData(data_json)
