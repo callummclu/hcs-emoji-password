@@ -15,6 +15,5 @@ FROM alpine:3.10
 RUN apk --no-cache add ca-certificates
 WORKDIR /usr/bin
 COPY --from=build /go/src/app/bin /go/bin
-COPY .env .
 EXPOSE 8080
 ENTRYPOINT /go/bin/test --port 8080
