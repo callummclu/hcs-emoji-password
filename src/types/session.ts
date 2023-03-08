@@ -1,9 +1,9 @@
 export interface session {
-  ID: number;
-  Emoji_time: string;
-  Emoji_password: string;
-  Emoji_reentry: string;
-  Standard_time: string;
-  Standard_password: string;
-  Standard_reentry: string;
+  session: number;
+  emoji_time: string;
+  emoji_password: string;
+  emoji_reentry: string;
+  standard_time: string;
+  standard_password: string;
+  standard_reentry: string;
 }

@@ -1,18 +1,17 @@
 import { Title,Text } from "@mantine/core"
 import { useEffect } from "react"
-import { session } from '../types/session'
 
 export const CompletePage = () => {
 
     const getPostData = () => {
         return {
-            Emoji_password: localStorage.getItem('emoji_password') || "",
-            Emoji_reentry: localStorage.getItem('emoji_reentry') || "",
-            Emoji_time: "0",
+            emoji_password: localStorage.getItem('emoji_password') || "",
+            emoji_reentry: localStorage.getItem('emoji_reentry') || "",
+            emoji_time: localStorage.getItem('emoji_time') || "",
 
-            Standard_password: localStorage.getItem('standard_password') || "",
-            Standard_reentry: localStorage.getItem('standard_reentry') || "",
-            Standard_time: "0"
+            standard_password: localStorage.getItem('standard_password') || "",
+            standard_reentry: localStorage.getItem('standard_reentry') || "",
+            standard_time: localStorage.getItem('standard_time') || ""
 
         }
     }

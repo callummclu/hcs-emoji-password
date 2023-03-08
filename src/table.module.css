@@ -1,0 +1,24 @@
+.table{
+    color:rgb(60,60,60);
+    font-size: 12px;
+    max-width: 800px;
+}
+
+.table th{
+    background-color: rgba(0,0,0,0.1);
+}
+
+.table td{
+    padding:5px;
+    border:0.5px solid lightgray;
+}
+
+.table tr{
+
+}
+
+.table tr{
+}
+
+.table tbody{
+}
