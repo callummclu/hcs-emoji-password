@@ -19,7 +19,7 @@ export const PasswordEntry = (props:PasswordProps) => {
 
     const inputValidation = () => {
         if((/\p{Extended_Pictographic}/u.test(passwordInput))){
-            if(passwordInput.length < 8){
+            if(Array.from(passwordInput).length < 8){
                 setInputErrorText("Password must be at least 8 characters");
                 return
             }
