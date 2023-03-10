@@ -19,8 +19,12 @@ export const PasswordEntry = (props:PasswordProps) => {
 
     const inputValidation = () => {
         if((/\p{Extended_Pictographic}/u.test(passwordInput)) || !props.isEmoji){
+            if(/\p{Extended_Pictographic}/u.test(passwordInput) && !props.isEmoji){
+                setInputErrorText("Password cannot contain emoji characters.");
+                return
+            }
             if(Array.from(passwordInput).length < 8){
-                setInputErrorText("Password must be at least 8 characters");
+                setInputErrorText("Password must be at least 8 characters.");
                 return
             }
             setInputErrorText("");
