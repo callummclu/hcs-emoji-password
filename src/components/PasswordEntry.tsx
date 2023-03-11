@@ -61,7 +61,7 @@ export const PasswordEntry = (props:PasswordProps) => {
         </div>}
         <div style={{display:"flex", position:'relative'}}>
             <Input.Wrapper error={inputErrorText}>
-        <Input miw={300} sx={{fontSize:'100px !important'}} value={passwordInput} onInput={(e) => setPasswordInput((e.target as any).value)} pr="xs" placeholder="enter your emoji filled password"/>
+        <Input id="password" miw={300} sx={{fontSize:'100px !important'}} value={passwordInput} onInput={(e) => setPasswordInput((e.target as any).value)} pr="xs" placeholder="enter your emoji filled password"/>
         </Input.Wrapper>
         {props.isEmoji && <div>
         <UnstyledButton onMouseOver={()=>setEmojiHover(true)} onMouseOut={() => setEmojiHover(false)} pt={7} onClick={()=>setShowEmojiPicker(!showEmojiPicker)}><AiOutlineSmile size={20} color={emojiHover ? "orange":"gray"}/></UnstyledButton>

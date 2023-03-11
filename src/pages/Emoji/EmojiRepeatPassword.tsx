@@ -3,10 +3,12 @@ import { useEffect, useState } from "react"
 import { VscSave } from "react-icons/vsc"
 import { PasswordEntry } from "../../components/PasswordEntry"
 import { Timer, Time, TimerOptions } from 'timer-node';
+import { inputValidation } from "../../helpers/check_password";
 
 export const EmojiRepeatPassword = () => {
     const [password, setPassword] = useState("")
     const [time, setTime] = useState(new Timer())
+    const [disabled, setDisabled] = useState(true)
 
     const SaveToLocalStorage = () => {
         localStorage.setItem("emoji_reentry", password);
@@ -19,6 +21,10 @@ export const EmojiRepeatPassword = () => {
         time.start()
     },[])
 
+    useEffect(()=>{
+        setDisabled(inputValidation(password, true))
+    },[password])
+
     return (
 
         <>
@@ -27,9 +33,8 @@ export const EmojiRepeatPassword = () => {
             <div style={{marginTop:100}}>
             <PasswordEntry isEmoji={true} password={[password, setPassword]} />
             </div>
-
             <Affix position={{ bottom: rem(20), right: rem(20)}}>
-                <Button onClick={SaveToLocalStorage} color="green">Complete task</Button>
+                <Button disabled={disabled} onClick={SaveToLocalStorage} color="green">Complete task</Button>
             </Affix>   
         </>
     )

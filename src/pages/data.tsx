@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Card, Flex, Text, Title } from '@mantine/core'
+import { Card, Flex, Loader, Text, Title } from '@mantine/core'
 import {session} from '../types/session'
 import styles from '../table.module.css'
 
@@ -23,7 +23,7 @@ export const Display = () => {
 
     return (
         <>
-            {data ? (data === null ? "no data..." : <Table data={data}/>) : success ? "loading..." : "failed to load"}
+            {data ? (data === null ? "no data..." : <Table data={data}/>) : success ? <Loader/> : "failed to load"}
         </>
     )
 }
@@ -53,11 +53,11 @@ return (
             {data.map((session) => (
         <tr key={session.session}>
             <td>{session.session}</td>
-            <td>{session.emoji_password}</td>
-            <td>{session.emoji_reentry}</td>
+            <td style={session.emoji_password === session.emoji_reentry ? {background:"#9ffca2"} : {background:"#fc9f9f"}}>{session.emoji_password}</td>
+            <td style={session.emoji_password === session.emoji_reentry ? {background:"#9ffca2"} : {background:"#fc9f9f"}}>{session.emoji_reentry}</td>
             <td>{session.emoji_time}</td>
-            <td>{session.standard_password}</td>
-            <td>{session.standard_reentry}</td>
+            <td style={session.standard_password === session.standard_reentry ? {background:"#9ffca2"} : {background:"#fc9f9f"}}>{session.standard_password}</td>
+            <td style={session.standard_password === session.standard_reentry ? {background:"#9ffca2"} : {background:"#fc9f9f"}}>{session.standard_reentry}</td>
             <td>{session.standard_time}</td>
         </tr>
     ))}

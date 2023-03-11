@@ -2,6 +2,7 @@ import { Title,Text, Affix, Button, rem } from "@mantine/core"
 import { useEffect, useState } from "react"
 import { Timer } from "timer-node"
 import { PasswordEntry } from "../../components/PasswordEntry"
+import { inputValidation } from "../../helpers/check_password"
 
 export const StandardRepeatPassword = () => {
     const [password, setPassword] = useState("")
@@ -14,6 +15,12 @@ export const StandardRepeatPassword = () => {
 
         window.location.replace("/complete")
     }
+
+    const [disabled, setDisabled] = useState(true)
+
+    useEffect(()=>{
+        setDisabled(inputValidation(password, false))
+    },[password])
 
     useEffect(()=>{
         time.start();
@@ -30,7 +37,7 @@ export const StandardRepeatPassword = () => {
             </div>
 
             <Affix position={{ bottom: rem(20), right: rem(20)}}>
-                <Button onClick={SaveToLocalStorage} color="green">Complete task</Button>
+                <Button disabled={disabled} onClick={SaveToLocalStorage} color="green">Complete task</Button>
             </Affix>   
             
         </>

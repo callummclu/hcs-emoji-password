@@ -1,15 +1,22 @@
 import { Title, Text, Affix, Button, rem } from "@mantine/core";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { VscSave } from "react-icons/vsc";
 import { PasswordEntry } from "../../components/PasswordEntry";
+import { inputValidation } from "../../helpers/check_password";
 
 export const EmojiPasswordEntry = () => {
     const [password, setPassword] = useState("")
+    const [disabled, setDisabled] = useState(true)
 
     const SaveToLocalStorage = () => {
         localStorage.setItem("emoji_password", password);
         window.location.replace("/emoji/distraction")
     }
+
+
+    useEffect(()=>{
+        setDisabled(inputValidation(password, true))
+    },[password])
 
     return (
 
@@ -21,7 +28,7 @@ export const EmojiPasswordEntry = () => {
             </div>
 
             <Affix position={{ bottom: rem(20), right: rem(20)}}>
-                <Button onClick={SaveToLocalStorage} color="green" leftIcon={<VscSave/>}>Save Password</Button>
+                <Button disabled={disabled} onClick={SaveToLocalStorage} color="green" leftIcon={<VscSave/>}>Save Password</Button>
             </Affix>   
             
         </>
