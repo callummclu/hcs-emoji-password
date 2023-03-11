@@ -23,7 +23,7 @@ export const Display = () => {
 
     return (
         <>
-            {data ? (data === null ? "no data..." : <Table data={data}/>) : success ? <Loader/> : "failed to load"}
+            {data ? <Table data={data}/> : (data === null ? "no data..." : success ? <Loader/> : "failed to load")}
         </>
     )
 }
