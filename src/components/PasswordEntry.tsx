@@ -1,7 +1,9 @@
 import { Input, UnstyledButton } from "@mantine/core";
 import EmojiPicker from "emoji-picker-react";
+import { Categories } from "emoji-picker-react";
 import { useEffect, useState } from "react";
 import { AiOutlineSmile } from "react-icons/ai";
+
 
 interface PasswordProps{
     password:any;
@@ -67,7 +69,7 @@ export const PasswordEntry = (props:PasswordProps) => {
         <UnstyledButton onMouseOver={()=>setEmojiHover(true)} onMouseOut={() => setEmojiHover(false)} pt={7} onClick={()=>setShowEmojiPicker(!showEmojiPicker)}><AiOutlineSmile size={20} color={emojiHover ? "orange":"gray"}/></UnstyledButton>
         {showEmojiPicker &&
         <div style={{position:"absolute", top:70, left:"50%",transform:"translateX(-50%)"}}>
-         <EmojiPicker autoFocusSearch={false} searchDisabled={true} onEmojiClick={(emoji) => setPasswordInput(passwordInput+emoji.emoji)}/>
+         <EmojiPicker autoFocusSearch={false} categories={[{name: "Smileys & People", category: Categories.SMILEYS_PEOPLE},{name: 'Animals & Nature', category: Categories.ANIMALS_NATURE},{name: 'Food & Drink', category: Categories.FOOD_DRINK},{name: 'Travel & Places', category: Categories.TRAVEL_PLACES},{name: 'Activities', category: Categories.ACTIVITIES},{name: 'Objects', category: Categories.OBJECTS}, ]} searchDisabled={true} onEmojiClick={(emoji) => setPasswordInput(passwordInput+emoji.emoji)}/>
         </div>}
         </div>}
         </div>
