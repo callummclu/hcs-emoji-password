@@ -23,7 +23,7 @@ export const StandardPasswordEntry = () => {
 
         <>
             <Title>Standard password entry</Title>
-            <Text>Choose a password including atleast 1 emoji.</Text>
+            <Text>Choose a password without any emojis.</Text>
             <div style={{marginTop:100}}>
             <PasswordEntry isEmoji={false} password={[password, setPassword]} />
             </div>

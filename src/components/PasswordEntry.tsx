@@ -67,7 +67,7 @@ export const PasswordEntry = (props:PasswordProps) => {
         <UnstyledButton onMouseOver={()=>setEmojiHover(true)} onMouseOut={() => setEmojiHover(false)} pt={7} onClick={()=>setShowEmojiPicker(!showEmojiPicker)}><AiOutlineSmile size={20} color={emojiHover ? "orange":"gray"}/></UnstyledButton>
         {showEmojiPicker &&
         <div style={{position:"absolute", top:70, left:"50%",transform:"translateX(-50%)"}}>
-         <EmojiPicker autoFocusSearch={false} searchDisabled={true} onEmojiClick={(emoji) => setPasswordInput(passwordInput+emoji.emoji)}/>
+         <EmojiPicker autoFocusSearch={false} categories={['smileys_people','animals_nature', 'food_drink', 'travel_places', 'activities','objects','symbols','flags']} searchDisabled={true} onEmojiClick={(emoji) => setPasswordInput(passwordInput+emoji.emoji)}/>
         </div>}
         </div>}
         </div>
