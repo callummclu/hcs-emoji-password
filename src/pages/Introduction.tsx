@@ -5,9 +5,9 @@ export const Introduction = () => {
 
     return (
         <>
-            <Title>HCS Emoji Password Entry</Title>
+            <Title>HCS Emoji Password Entry - <Text style={{display:'inline-block'}} variant='gradient' gradient={{ from: 'indigo', to:'cyan',deg:45}}>Group AT</Text></Title>
             <Text mt="md">Welcome to our experiment studying the effects of including Emojis in a password on the usability, memorability and security of the password. We will ask you to come up with multiple passwords and recall them after a short memory game, while we keep track of some metrics such as success rate. 
-It should take a maximum of 10 minutes to complete the study, thank you for participating. \n
+It should take a maximum of 10 minutes to complete the study, thank you for participating. <br/><br/>
 You are welcome to withdraw from the experiment at any time, please contact us at 2383228f@student.gla.ac.uk if you have any questions. Click the 'Get Started' button to begin. </Text>
 
             <Affix position={{ bottom: rem(20), right: rem(20)}}>
