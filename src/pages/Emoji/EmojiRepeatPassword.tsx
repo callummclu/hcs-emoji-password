@@ -1,4 +1,4 @@
-import { Title,Text, Affix, Button, rem } from "@mantine/core"
+import { Title,Text, Affix, Button, rem, Card } from "@mantine/core"
 import { useEffect, useState } from "react"
 import { VscSave } from "react-icons/vsc"
 import { PasswordEntry } from "../../components/PasswordEntry"
@@ -28,8 +28,10 @@ export const EmojiRepeatPassword = () => {
     return (
 
         <>
-            <Title>Emoji password re-entry</Title>
-            <Text>Re-enter the password you previously created.</Text>
+            <Card mt="xl" p="xl" withBorder>
+                <Title>Emoji password re-entry</Title>
+                <Text>Re-enter the password you previously created.</Text>
+            </Card>
             <div style={{marginTop:100}}>
             <PasswordEntry isEmoji={true} password={[password, setPassword]} />
             </div>

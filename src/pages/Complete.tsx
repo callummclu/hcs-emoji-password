@@ -28,7 +28,7 @@ export const CompletePage = () => {
 
     return (
         <>
-            <Title mt="xl">Tasks Finished</Title>
+            <Title>Tasks Finished</Title>
             <Text mt="md">Thanks for participating in our study.</Text>
         </>
     )

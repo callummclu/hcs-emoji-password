@@ -1,4 +1,4 @@
-import { Title, Text, Affix, Button, rem } from "@mantine/core";
+import { Title, Text, Affix, Button, rem, Card, Code } from "@mantine/core";
 import { useEffect, useState } from "react";
 import { VscSave } from "react-icons/vsc";
 import { PasswordEntry } from "../../components/PasswordEntry";
@@ -21,8 +21,11 @@ export const EmojiPasswordEntry = () => {
     return (
 
         <>
-            <Title>Emoji password entry</Title>
-            <Text>Choose a password including atleast 1 emoji.</Text>
+            <Card mt="xl" p="xl" withBorder>
+                <Title>Emoji password entry</Title>
+                <Text>Choose a password with a minimum length of 8 characters including atleast 1 emoji.</Text>
+                <Text>Here is an example password <Code>jdhWnC7🐬</Code></Text>
+            </Card>
             <div style={{marginTop:100}}>
             <PasswordEntry isEmoji={true} password={[password, setPassword]} />
             </div>

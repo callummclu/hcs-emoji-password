@@ -4,7 +4,7 @@ import { VscDebugStart } from "react-icons/vsc"
 export const StandardSplashPage = () => {
     return (
         <>
-            <Title mt="xl">Stage 2: Standard Entry</Title>
+            <Title>Stage 2: Standard Entry</Title>
             <Text mt="md">In this section we will ask you to enter a regular password, using only characters available on your keyboard. Please choose a password over 8 characters and continue.</Text>
 
             <Affix position={{ bottom: rem(20), right: rem(20)}}>

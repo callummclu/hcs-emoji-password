@@ -13,24 +13,25 @@ import { Error } from './pages/error'
 interface Route{
     path:string;
     element:React.ReactElement;
+    withCard:boolean;
 }
 
 export const routes:Route[] = [
-    {path: "*", element: <Error/>},
-    {path:"/",element:<Introduction/>},
+    {path: "*", element: <Error/>, withCard:false},
+    {path:"/",element:<Introduction/>, withCard:true},
 
     // emoji entry
-    {path:"emoji",element:<EmojiSplashPage/>},
-    {path:"emoji/entry", element:<EmojiPasswordEntry/>},
-    {path:"emoji/repeat", element:<EmojiRepeatPassword/>},
-    {path:"emoji/distraction", element: <DistractionGame type="emoji"/>},
+    {path:"emoji",element:<EmojiSplashPage/>, withCard:true},
+    {path:"emoji/entry", element:<EmojiPasswordEntry/>, withCard:false},
+    {path:"emoji/repeat", element:<EmojiRepeatPassword/>, withCard:false},
+    {path:"emoji/distraction", element: <DistractionGame type="emoji"/>, withCard:true},
 
     // standard entry
-    {path:"standard", element:<StandardSplashPage/>},
-    {path:"standard/entry", element:<StandardPasswordEntry/>},
-    {path:"standard/repeat", element:<StandardRepeatPassword/>},
-    {path:"standard/distraction", element: <DistractionGame type="standard"/>},
+    {path:"standard", element:<StandardSplashPage/>, withCard:true},
+    {path:"standard/entry", element:<StandardPasswordEntry/>, withCard:false},
+    {path:"standard/repeat", element:<StandardRepeatPassword/>, withCard:false},
+    {path:"standard/distraction", element: <DistractionGame type="standard"/>, withCard:true},
 
-    {path:"complete", element:<CompletePage/>},
-    {path:"results", element:<Display/>},
+    {path:"complete", element:<CompletePage/>, withCard:true},
+    {path:"results", element:<Display/>, withCard:true},
 ]
